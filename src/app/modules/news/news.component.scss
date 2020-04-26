@@ -1,0 +1,32 @@
+@import "../../../assets/scss/now-ui-dashboard/variables";
+
+.filter-status {
+  margin-top: 2% ;
+  margin-left: 1%;
+  width: 40%;
+}
+
+mat-cell {
+  .order_status {
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+  }
+}
+
+.mat-cell {
+  word-break: break-word;
+  margin-right: 30px;
+}
+
+.text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.full-width-dialog .mat-dialog-container {
+  max-width: 50vw !important;
+  width: 60%;
+}

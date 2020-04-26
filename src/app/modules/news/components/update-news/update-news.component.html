@@ -1,0 +1,92 @@
+<div class="dialog">
+  <div class="dialog__header">
+    <div class="title">
+      <h4>{{ "Update News" | translate }}</h4>
+    </div>
+  </div>
+  <form [formGroup]="updateArticle">
+    <div class="row">
+      <div class="col-md-6 col-12">
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" formControlName="title" placeholder="title"/>
+        </div>
+      </div>
+      <div class="col-md-6 col-12">
+        <div class="form-group">
+          <label>Description</label>
+          <input type="text" class="form-control" formControlName="description" placeholder="description"/>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-12">
+        <div class="form-group">
+          <label>Origin</label>
+
+          <input type="text" class="form-control" formControlName="origin" placeholder="origin"/>
+        </div>
+      </div>
+      <div class="col-md-6 col-12">
+        <div class="form-group">
+          <label>Category</label>
+
+          <input type="text" class="form-control" formControlName="category" placeholder="category"/>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-12">
+        <div class="form-group">
+          <label>Link</label>
+
+          <input type="text" class="form-control" formControlName="link" placeholder="link"/>
+        </div>
+      </div>
+      <div class="col-md-6 col-12">
+        <div class="form-group">
+          <label>Date</label>
+          <mat-form-field appearance="outline" style="width: 100%">
+            <input formControlName="date" matInput [min]="today" [matDatepicker]="from" placeholder="date" >
+            <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
+            <mat-datepicker #from></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="author">
+      <div class="image__container">
+        <input
+          type="file"
+          hidden
+          multiple
+          #filePicker
+          (change)="onImagePicked($event)"
+        />
+        <button class="mat-raised-button" (click)="filePicker.click()"><i class="fas fa-upload mr-1"></i>
+
+          <span>Upload Photo</span></button>
+
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-md-4 col-6">
+        <img style="object-fit: contain" [src]="imagePreview" *ngIf="imagePreview">
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: row; justify-content: space-between">
+      <app-open-dialog-button
+        [loading]="loading"
+        (isClicked)="UpdateArticles()"
+        name="{{ 'Submit' | translate }}"
+      ></app-open-dialog-button>
+
+      <app-close-dialog-button
+        (isClicked)="close()"
+        name="{{ 'Close' | translate }}">
+      </app-close-dialog-button>
+    </div>
+
+  </form>
+</div>
