@@ -1,10 +1,12 @@
 import {Injectable} from '@angular/core';
-import {CanActivate, Router} from '@angular/router';
+import {CanActivate, CanLoad, NavigationEnd, Route, Router, RoutesRecognized} from '@angular/router';
 import {AuthService} from '../services/auth.service';
+import {filter, pairwise} from 'rxjs/operators';
 
 @Injectable()
 export class CanActivateViaAuthGuard implements CanActivate {
   status: any;
+  previousUrl: string;
 
   constructor(private authService: AuthService, private router: Router) {
   }
@@ -17,4 +19,13 @@ export class CanActivateViaAuthGuard implements CanActivate {
   canActivate() {
     return this.handleGuard();
   }
+  //
+  // canLoad(route: Route): boolean {
+  //   if (this.authService.isUserLoggedIn()) {
+  //     console.log('this')
+  //     return true;
+  //   }
+  //   this.router.navigateByUrl('/auth');
+  //   console.log('this false');
+  // }
 }

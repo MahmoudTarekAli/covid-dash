@@ -9,19 +9,19 @@
 
           </div>
           <div class="card-action">
-            <div class="search-container">
-              <input
-                class="search expandright"
-                id="searchright"
-                #searchInput
-                type="search"
-                name="q"
-                placeholder="Search by name"
-              />
-              <label class="button searchbutton" for="searchright">
-                <mat-icon>search</mat-icon>
-              </label>
-            </div>
+            <!--            <div class="search-container">-->
+            <!--              <input-->
+            <!--                class="search expandright"-->
+            <!--                id="searchright"-->
+            <!--                #searchInput-->
+            <!--                type="search"-->
+            <!--                name="q"-->
+            <!--                placeholder="Search by name"-->
+            <!--              />-->
+            <!--              <label class="button searchbutton" for="searchright">-->
+            <!--                <mat-icon>search</mat-icon>-->
+            <!--              </label>-->
+            <!--            </div>-->
           </div>
           <div>
             <app-add-button
@@ -37,13 +37,14 @@
             class="tabel__container"
             [hidden]="(dataSource.loading$ | async) || dataSource.empty"
           >
-            <mat-table [dataSource]="dataSource" >
+            <mat-table [dataSource]="dataSource">
 
               <ng-container matColumnDef="title">
                 <mat-header-cell *matHeaderCellDef>
                   {{ "title"  }}</mat-header-cell
                 >
-                <mat-cell class="date-direction" *matCellDef="let element">
+                <mat-cell class="date-direction" *matCellDef="let element" [matTooltip]="element.title"
+                          matTooltipPosition="above">
                   <p class="text">{{element.title }}</p>
 
                 </mat-cell>
@@ -52,8 +53,9 @@
                 <mat-header-cell *matHeaderCellDef>
                   {{ "link"  }}</mat-header-cell
                 >
-                <mat-cell class="date-direction" *matCellDef="let element">
-                  <p class="text">{{element.link }}</p>
+                <mat-cell class="date-direction" *matCellDef="let element" [matTooltip]="element.link"
+                          matTooltipPosition="above">
+                  <p class="text"><a [href]="element.link" target="_blank" >{{element.link }}</a></p>
 
                 </mat-cell>
               </ng-container>
@@ -61,7 +63,8 @@
                 <mat-header-cell *matHeaderCellDef>
                   {{ "description"  }}</mat-header-cell
                 >
-                <mat-cell class="date-direction" *matCellDef="let element">
+                <mat-cell class="date-direction" *matCellDef="let element" [matTooltip]="element.description"
+                          matTooltipPosition="above">
                   <p class="text">{{element.description }}</p>
 
                 </mat-cell>
@@ -73,7 +76,8 @@
               </ng-container>
               <ng-container matColumnDef="origin">
                 <mat-header-cell *matHeaderCellDef>{{ "origin"  }}</mat-header-cell>
-                <mat-cell *matCellDef="let element">
+                <mat-cell *matCellDef="let element" [matTooltip]="element.origin"
+                          matTooltipPosition="above">
                   <p class="text">{{element.origin }}</p>
                 </mat-cell>
               </ng-container>
@@ -89,10 +93,10 @@
                     "  Actions"
                   }}</mat-header-cell>
                 <mat-cell *matCellDef="let element">
-                  <button  mat-icon-button (click)="updateNews(element)">
-                    <mat-icon  [matTooltip]="'Edit'" matTooltipPosition="above" style="color: #38b5f1;">edit</mat-icon>
+                  <button mat-icon-button (click)="updateNews(element)">
+                    <mat-icon [matTooltip]="'Edit'" matTooltipPosition="above" style="color: #38b5f1;">edit</mat-icon>
                   </button>
-                  <button mat-icon-button (click)="delete(element)" >
+                  <button mat-icon-button (click)="delete(element)">
                     <mat-icon [matTooltip]="'Delete'" matTooltipPosition="above">delete</mat-icon>
                   </button>
 

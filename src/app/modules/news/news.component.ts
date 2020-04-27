@@ -1,6 +1,5 @@
 import {AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {MatDialog, MatPaginator} from '@angular/material';
-import {ArticlesDataSource} from './classes/articles.data.source';
 import {NewsService} from './service/news.service';
 import {NotificationService} from '../../shared/services/notifications/notification.service';
 import {fromEvent, Subject} from 'rxjs';
@@ -10,6 +9,7 @@ import {Router} from '@angular/router';
 import Swal from 'sweetalert2';
 import {AddNewsComponent} from './components/add-news/add-news.component';
 import {UpdateNewsComponent} from './components/update-news/update-news.component';
+import {NewsDataSource} from './classes/news.data.source';
 
 @Component({
   selector: 'app-categories',
@@ -17,13 +17,13 @@ import {UpdateNewsComponent} from './components/update-news/update-news.componen
   styleUrls: ['./news.component.scss', '../tabel.scss']
 })
 export class NewsComponent implements OnInit, AfterViewInit {
-  dataSource = new ArticlesDataSource(this.articlesService);
+  dataSource = new NewsDataSource(this.articlesService);
   @ViewChild(MatPaginator) paginator: MatPaginator;
   $destroy = new Subject<any>();
   public loadingTemplate: TemplateRef<any>;
   // @ts-ignore
   @ViewChild('customLoadingTemplate', {static: false}) customLoadingTemplate: TemplateRef<any>;
-  @ViewChild('searchInput') search: ElementRef;
+  // @ViewChild('searchInput') search: ElementRef;
   categories: number;
   width: string;
   max_width: string;
@@ -128,8 +128,8 @@ export class NewsComponent implements OnInit, AfterViewInit {
 
 
   RefreshServiceData() {
-    this.dataSource = new ArticlesDataSource(this.articlesService);
-    this.dataSource.loadNews(0, this.search.nativeElement.value);
+    this.dataSource = new NewsDataSource(this.articlesService);
+    this.dataSource.loadNews(0);
     this.dataSource.mata$.pipe(
       takeUntil(this.$destroy)
     ).subscribe(totalNumber => this.categories = totalNumber);
@@ -144,22 +144,22 @@ export class NewsComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.paginator.page.pipe(tap(() => this.loadPage())).subscribe();
-    fromEvent(this.search.nativeElement, 'keyup')
-      .pipe(
-        debounceTime(150),
-        distinctUntilChanged(),
-        tap(() => {
-          this.paginator.pageIndex = 0;
-          this.loadPage();
-        })
-      )
-      .subscribe();
+    // fromEvent(this.search.nativeElement, 'keyup')
+    //   .pipe(
+    //     debounceTime(150),
+    //     distinctUntilChanged(),
+    //     tap(() => {
+    //       this.paginator.pageIndex = 0;
+    //       this.loadPage();
+    //     })
+    //   )
+    //   .subscribe();
   }
 
   loadPage() {
     this.dataSource.loadNews(
       this.paginator.pageIndex,
-      this.search.nativeElement.value,
+      // this.search.nativeElement.value,
     );
   }
 

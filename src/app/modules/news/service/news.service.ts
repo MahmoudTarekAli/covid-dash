@@ -13,15 +13,11 @@ export class NewsService {
   }
 
 
-  getAllNews(
-    page = 0,
-    search = ''
-  ): Observable<any> {
+  getAllNews(page = 0,): Observable<any> {
     let headers = new HttpHeaders();
     let params = new HttpParams();
     params = params.append('page', page.toString());
     params = params.append('pagination', 'true');
-    params = params.append('search', search.toString());
     params = params.append('limit', '10');
 
 

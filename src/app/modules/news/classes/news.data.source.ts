@@ -3,7 +3,7 @@ import {CollectionViewer, DataSource} from '@angular/cdk/collections';
 import {catchError, finalize, first, tap} from 'rxjs/operators';
 import {NewsService} from '../service/news.service';
 
-export class ArticlesDataSource implements DataSource<any> {
+export class NewsDataSource implements DataSource<any> {
 
   private articles = new BehaviorSubject<any[]>([]);
   private loadingSubject = new BehaviorSubject<boolean>(false);
@@ -28,11 +28,11 @@ export class ArticlesDataSource implements DataSource<any> {
     this.loadingSubject.complete();
   }
 
-  loadNews(pageNumber, $search) {
+  loadNews(pageNumber) {
 
     this.loadingSubject.next(true);
 
-    this.articlesService.getAllNews(pageNumber, $search)
+    this.articlesService.getAllNews(pageNumber)
       .pipe(
         first(),
       catchError(() => of([])),

@@ -63,7 +63,6 @@ export class AddNewsComponent implements OnInit {
       category: this.NewArticle.controls.category.value,
       date: this.formatDate(this.NewArticle.controls.date.value),
     };
-    console.log(data);
     const formData = new FormData();
     formData.append('url_img', this.image);
     formData.append('data', JSON.stringify(data));
