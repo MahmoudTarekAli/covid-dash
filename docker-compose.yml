@@ -1,18 +1,18 @@
 version: '3'
 services:
-  dashboard:
+  covid-dashboard:
     build:
       context: .
       dockerfile: Dockerfile
-    image: dashboard
-    container_name: dashboard
+    image: covid-dashboard
+    container_name: covid-dashboard
     ports:
-      - 3005:3000
+      - 3007:3000
     restart: unless-stopped
     environment:
-      VIRTUAL_HOST: dash.myms.smartyotta.com
-      VIRTUAL_PORT: 3005
-      LETSENCRYPT_HOST: dash.myms.smartyotta.com
+      VIRTUAL_HOST: covid-dash.myms.smartyotta.com
+      VIRTUAL_PORT: 3007
+      LETSENCRYPT_HOST: covid-dash.myms.smartyotta.com
       LETSENCRYPT_EMAIL: mohammedsalaah96@gmail.com
 networks:
   default:
