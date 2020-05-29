@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d5d1c5c7-4825-48d5-8ff5-6a208fd29929" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.routing.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/sidebar/sidebar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/auth/auth-guard/auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/auth/auth-guard/auth.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/auth/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/auth/services/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/news/classes/articles.data.source.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/news/components/add-news/add-news.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/news/components/add-news/add-news.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/news/news.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/news/news.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/news/news.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/news/news.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/news/service/news.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/news/service/news.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-    </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="d5d1c5c7-4825-48d5-8ff5-6a208fd29929" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +12,13 @@
   </component>
   <component name="ProjectId" id="1b3BwsspZHX5q3qEgpJtgWr02HJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -36,18 +28,6 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Users\Admin\Downloads\covid-dash\node_modules\typescript\lib" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Tests (clipper)" type="JavaScriptTestRunnerKarma">
@@ -83,11 +63,12 @@
       <workItem from="1587851143672" duration="791000" />
       <workItem from="1587851983880" duration="2137000" />
       <workItem from="1587854162878" duration="13075000" />
+      <workItem from="1590727629736" duration="643000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -99,5 +80,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

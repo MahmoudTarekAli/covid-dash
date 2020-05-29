@@ -10,9 +10,9 @@ services:
       - 3005:3000
     restart: unless-stopped
     environment:
-      VIRTUAL_HOST: dash.myms.smartyotta.com
+      VIRTUAL_HOST: covid-dash.myms.smartyotta.com
       VIRTUAL_PORT: 3005
-      LETSENCRYPT_HOST: dash.myms.smartyotta.com
+      LETSENCRYPT_HOST: covid-dash.myms.smartyotta.com
       LETSENCRYPT_EMAIL: mohammedsalaah96@gmail.com
 networks:
   default:
