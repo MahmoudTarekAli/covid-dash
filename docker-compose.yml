@@ -1,11 +1,11 @@
 version: '3'
 services:
-  dashboard:
+  covid-dashboard:
     build:
       context: .
       dockerfile: Dockerfile
-    image: dashboard
-    container_name: dashboard
+    image: covid-dashboard
+    container_name: covid-dashboard
     ports:
       - 3005:3000
     restart: unless-stopped
