@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  base_url: 'https://api-covid.myms.smartyotta.com/'
+  base_url: 'https://api-covid.myms.smartyotta.com'
 
 };
