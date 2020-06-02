@@ -29,7 +29,6 @@ export class UpdateNewsComponent implements OnInit {
       title: ['', Validators.required],
       description: ['', Validators.required],
       origin: ['', Validators.required],
-      category: ['', Validators.required],
       link: ['', Validators.required],
       date: ['', Validators.required],
     });
@@ -39,7 +38,6 @@ export class UpdateNewsComponent implements OnInit {
     this.updateArticle.controls.title.setValue(this.article.title);
     this.updateArticle.controls.description.setValue(this.article.description);
     this.updateArticle.controls.origin.setValue(this.article.origin);
-    this.updateArticle.controls.category.setValue(this.article.category);
     this.updateArticle.controls.link.setValue(this.article.link);
     this.updateArticle.controls.date.setValue(this.article.date);
     this.imagePreview = this.article.url_img;
@@ -68,7 +66,7 @@ export class UpdateNewsComponent implements OnInit {
       description: this.updateArticle.controls.description.value,
       origin: this.updateArticle.controls.origin.value,
       link: this.updateArticle.controls.link.value,
-      category: this.updateArticle.controls.category.value,
+      category: 'new',
       date: this.formatDate(this.updateArticle.controls.date.value),
     };
     const formData = new FormData();

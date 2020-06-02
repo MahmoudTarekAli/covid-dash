@@ -8,26 +8,15 @@
   </div>
   <form [formGroup]="NewArticle">
     <div class="row">
-      <div class="col-md-6 col-12">
+      <div class="col-md-12 col-12">
         <div class="form-group">
           <input type="text" class="form-control" formControlName="title" placeholder="title"/>
         </div>
       </div>
-      <div class="col-md-6 col-12">
+      <div class="col-md-12 col-12">
         <div class="form-group">
-          <input type="text" class="form-control" formControlName="description" placeholder="description"/>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 col-12">
-        <div class="form-group">
-          <input type="text" class="form-control" formControlName="origin" placeholder="origin"/>
-        </div>
-      </div>
-      <div class="col-md-6 col-12">
-        <div class="form-group">
-          <input type="text" class="form-control" formControlName="category" placeholder="category"/>
+          <textarea  style="width: 100%" rows="4"  formControlName="description" placeholder="description"></textarea>
+
         </div>
       </div>
     </div>
@@ -40,13 +29,21 @@
       <div class="col-md-6 col-12">
         <div class="form-group">
           <mat-form-field appearance="outline" style="width: 100%">
-            <input formControlName="date" matInput [min]="today" [matDatepicker]="from" placeholder="date" >
+            <input formControlName="date" matInput  [matDatepicker]="from" placeholder="date" >
             <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
             <mat-datepicker #from></mat-datepicker>
           </mat-form-field>
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-6 col-12">
+        <div class="form-group">
+          <input type="text" class="form-control" formControlName="origin" placeholder="origin"/>
+        </div>
+      </div>
+    </div>
+
     <div class="author">
       <div class="image__container">
         <input

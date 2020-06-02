@@ -31,7 +31,6 @@ export class AddNewsComponent implements OnInit {
       title: ['', Validators.required],
       description: ['', Validators.required],
       origin: ['', Validators.required],
-      category: ['', Validators.required],
       link: ['', Validators.required],
       date: ['', Validators.required],
     });
@@ -60,7 +59,7 @@ export class AddNewsComponent implements OnInit {
       description: this.NewArticle.controls.description.value,
       origin: this.NewArticle.controls.origin.value,
       link: this.NewArticle.controls.link.value,
-      category: this.NewArticle.controls.category.value,
+      category: 'new',
       date: this.formatDate(this.NewArticle.controls.date.value),
     };
     const formData = new FormData();
