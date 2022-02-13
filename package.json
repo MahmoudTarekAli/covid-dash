@@ -55,7 +55,7 @@
     "@types/jasmine": "3.3.8",
     "@types/jquery": "3.3.29",
     "@types/node": "^10.14.5",
-    "ajv": "6.7.0",
+    "ajv": "6.12.3",
     "ajv-keywords": "3.3.0",
     "angular-bootstrap-md": "^7.0.0",
     "bootstrap": "4.2.1",
