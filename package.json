@@ -21,7 +21,7 @@
   "dependencies": {
     "sweetalert2": "^9.5.3",
     "express": "^4.16.4",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ng-pick-datetime": "^7.0.0",
     "ngx-material-timepicker": "^3.3.1"
   },
